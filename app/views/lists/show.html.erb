@@ -1,12 +1,14 @@
 <h1><%= @list.name %></h1>
 
-<% @bookmark.each do |bookmark| %>
+<% @bookmarks.each do |bookmark| %>
   <div>
     <p><img class="posters" src="<%=bookmark.movie.poster_url %>" alt="movie_pic"> <br>
-    <%= bookmark.movie.title %> :<br>
+    <%= bookmark.movie.title %> <%= link_to 'X', bookmark_path(bookmark),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %><br>
     <%= bookmark.movie.overview %> <br>
     <%= bookmark.movie.rating %> <br>
     <%= bookmark.comment %>
+
     </p>
   </div>
 
