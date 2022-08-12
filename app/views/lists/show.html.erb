@@ -2,7 +2,7 @@
 
 <% @bookmark.each do |bookmark| %>
   <div>
-    <p><%= bookmark.movie.poster_url %> <br>
+    <p><img class="posters" src="<%=bookmark.movie.poster_url %>" alt="movie_pic"> <br>
     <%= bookmark.movie.title %> :<br>
     <%= bookmark.movie.overview %> <br>
     <%= bookmark.movie.rating %> <br>
